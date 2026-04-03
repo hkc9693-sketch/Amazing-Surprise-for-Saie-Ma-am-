@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Small Surprise 🌸</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    color: #333;
+}
+
+.container {
+    padding: 40px;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: #ff4d6d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e60039;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container" id="page1">
+    <h1>Good Evening Ma’am 😊</h1>
+    <p>I made something special… just for you 🌸</p>
+    <button onclick="nextPage('page2')">Click to Begin ✨</button>
+</div>
+
+<div class="container hidden" id="page2">
+    <h1>Can I steal 2 minutes of your time? ⏳</h1>
+    <button onclick="nextPage('page3')">Yes 😄</button>
+    <button onclick="alert('इतनी भी क्या नाराज़गी 😢 Try again!')">No 😢</button>
+</div>
+
+<div class="container hidden" id="page3">
+    <h1>You’re one of the most graceful seniors I’ve met ✨</h1>
+    <button onclick="nextPage('page4')">Next Surprise 🎁</button>
+</div>
+
+<div class="container hidden" id="page4">
+    <h1>Press for a surprise 😏</h1>
+    <button onclick="showRose()">Click Me 🌹</button>
+    <p id="rose" class="hidden">🌹 For you</p>
+    <br><br>
+    <button onclick="nextPage('page5')">Continue ➡️</button>
+</div>
+
+<div class="container hidden" id="page5">
+    <h1>So… will you be my prom partner? 💫</h1>
+    <button onclick="yesAnswer()">YES 💖</button>
+    <button onclick="alert('I’ll take that as a maybe 😄')">THINKING 🤔</button>
+</div>
+
+<div class="container hidden" id="final">
+    <h1>Best decision ever 😌✨</h1>
+    <p>Looking forward to a beautiful evening 🌸</p>
+</div>
+
+<script>
+function nextPage(pageId) {
+    document.querySelectorAll('.container').forEach(div => div.classList.add('hidden'));
+    document.getElementById(pageId).classList.remove('hidden');
+}
+
+function showRose() {
+    document.getElementById('rose').classList.remove('hidden');
+}
+
+function yesAnswer() {
+    document.querySelectorAll('.container').forEach(div => div.classList.add('hidden'));
+    document.getElementById('final').classList.remove('hidden');
+}
+</script>
+
+</body>
+</html>
